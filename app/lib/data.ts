@@ -1,4 +1,3 @@
-import { sql } from '@vercel/postgres';
 import {
   CustomerField,
   CustomersTableType,
@@ -9,6 +8,8 @@ import {
   Revenue,
 } from './definitions';
 import { formatCurrency } from './utils';
+import { sql } from '@vercel/postgres';
+
 
 export async function fetchRevenue() {
   // Add noStore() here to prevent the response from being cached.
@@ -52,7 +53,7 @@ export async function fetchLatestInvoices() {
   }
 }
 
-export async function fetchCardData() {
+export async function fetchCardData() { 
   try {
     // You can probably combine these into a single SQL query
     // However, we are intentionally splitting them to demonstrate
